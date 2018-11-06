@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<link href="css/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery.fancybox-buttons.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery.fancybox-thumbs.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-buttons.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/jquery.fancybox-thumbs.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jMenu.jquery.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			
+			$("#jMenu").jMenu({
+			  openClick : false,
+			  ulWidth : '150',
+			  effects : {
+				effectSpeedOpen : 300,
+				effectSpeedClose : 300,
+				effectTypeOpen : 'slide',
+				effectTypeClose : 'slide',
+				effectOpen : 'easeInCubic',
+				effectClose : 'easeInElastic'
+			  },
+			  TimeBeforeOpening : 100,
+			  TimeBeforeClosing : 400,
+			  animatedText : false,
+			  paddingLeft: 1
+			});
+			
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay opening speed and opacity
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedIn : 500,
+						opacity : 0.95
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background-color' : '#eee'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<style type="text/css">
+.fancybox-custom .fancybox-skin {
+	box-shadow: 0 0 50px #222;
+}
+</style>
+<link href="css/jMenu.jquery.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="body-content-container">
+<div id="main-container">
+<div id="home-header-container"><img src="images/dmaiheader.jpg" width="962" height="147" alt="dmaiheader.jpg" /></div>
+
+<!-- Main-navigation -->
+<div id="main-navigation-container">
+  <ul id="jMenu">
+    <li><a class="fNiv">Home</a>
+      <ul>
+        <li><a>Updates</a></li>
+        <li><a>Power of Direct</a></li>
+      </ul>
+    </li>
+    <li><a class="fNiv">The Convention</a>
+      <ul>
+        <li><a>Who&#8217;s Attending</a></li>
+        <li><a>Register</a>
+          <ul>
+            <li><a>Why Attend</a></li>
+            <li><a>Pricing</a></li>
+            <li><a>Travel &#038; Visa</a></li>
+            <li><a>Hotel</a></li>
+            <li><a>Knowledge Store</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a class="fNiv">Advisory Council</a>
+      <ul>
+        <li><a>view advisory</a></li>
+      </ul>
+    </li>
+    <li><a class="fNiv">Conference</a>
+      <ul>
+        <li><a>Program & Keynotes</a></li>
+        <li><a>Schedule</a></li>
+        <li><a>Masterclasses</a></li>
+      </ul>
+    </li>
+    <li><a class="fNiv">Speakers</a>
+      <ul>
+        <li><a>Call for Papers</a></li>
+      </ul>
+    </li>
+    <li><a class="fNiv">Awards</a>
+      <ul>
+        <li><a>Call for Entries</a></li>
+        <li><a>Award Categories</a></li>
+        <li><a>Jury</a></li>
+        <li><a>Judging Process</a></li>
+      </ul>
+    </li>
+    <li><a class="fNiv">Expo</a></li>
+    </li>
+    <li><a class="fNiv">Sponsor</a>
+      <ul>
+        <li><a>Current Sponsors & Partners</a></li>
+      </ul>
+    </li>
+    <li><a class="fNiv">Contact Us</a></li>
+    <li><a class="fNiv">DMAI</a></li>
+  </ul>
+</div>
+<!-- Main-navigation --> 
+
+<!-- Body-Container -->
+<div id="body-main-container">
+  <div id="body-left-container">
+    <div id="page-title-container"> My Account </div>
+    <div id="accountpage-main-container">
+      <div id="accountpage-main-tab-nav-container">
+        <ul>
+          <li id="tab_nav1_normal"  style="display:none"><a href="#" onclick="nav_tab(1);">Tab1</a></li>
+          <li id="tab_nav1_active" class="accountpage-main-tab-active-nav-container" style="display:block">Tab1</li>
+          <li id="tab_nav2_normal" style="display:block"><a href="#" onclick="nav_tab(2);">Tab2</a></li>
+          <li id="tab_nav2_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab2</li>
+          <li id="tab_nav3_normal" style="display:block"><a href="#" onclick="nav_tab(3);">Tab3</a></li>
+          <li id="tab_nav3_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab3</li>
+          <li id="tab_nav4_normal" style="display:block"><a href="#" onclick="nav_tab(4);">Tab4</a></li>
+          <li id="tab_nav4_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab4</li>
+          <li id="tab_nav5_normal" style="display:block"><a href="#" onclick="nav_tab(5);">Tab5</a></li>
+          <li id="tab_nav5_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab5</li>
+          <li id="tab_nav6_normal" style="display:block"><a href="#" onclick="nav_tab(6);">Tab6</a></li>
+          <li id="tab_nav6_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab6</li>
+          <li id="tab_nav7_normal" style="display:block"><a href="#" onclick="nav_tab(7);">Tab7</a></li>
+          <li id="tab_nav7_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab7</li>
+          <li id="tab_nav8_normal" style="display:block"><a href="#" onclick="nav_tab(8);">Tab8</a></li>
+          <li id="tab_nav8_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab8</li>
+          <li id="tab_nav9_normal" style="display:block"><a href="#" onclick="nav_tab(9);">Tab9</a></li>
+          <li id="tab_nav9_active" class="accountpage-main-tab-active-nav-container" style="display:none">Tab9</li>
+        </ul>
+      </div>
+       <!--tab_container1-->
+      <div id="tab_container1" class="accountpage-main-tab-container" style="display:block">
+        <ul>
+          <li>Title
+            <input name="" type="text" />
+          </li>
+          <li>Title
+            <input name="" type="text" />
+          </li>
+        </ul>
+        <div class="accountpage-main-tab-btn-container"><a href="#" target="_self">Update</a></div>
+      </div>
+       <!--tab_container1-->
+       
+       <!--tab_container2-->
+      <div id="tab_container2" class="accountpage-main-tab-container" style="display:none">
+        <div class="accountpage-main-tab-list-container">
+          <ul>
+            <li>
+              <div class="accountpage-main-tab-list-container-id" style="background-color:#1B5180; color:#ffffff">ID</div>
+              <div class="accountpage-main-tab-list-container-description"style="background-color:#1B5180; color:#ffffff" >Description</div>
+              <div class="accountpage-main-tab-list-container-edit" style="background-color:#1B5180; color:#ffffff">Edit</div>
+            </li>
+            <li>
+              <div class="accountpage-main-tab-list-container-id">12345</div>
+              <div class="accountpage-main-tab-list-container-description">Dummy Text</div>
+              <div class="accountpage-main-tab-list-container-edit"><a href="#" target="_self">Edit</a></div>
+            </li>
+            <li>
+              <div class="accountpage-main-tab-list-container-id">12345</div>
+              <div class="accountpage-main-tab-list-container-description">Dummy Text</div>
+              <div class="accountpage-main-tab-list-container-edit"><a href="#" target="_self">Edit</a></div>
+            </li>
+          </ul>
+          <div class="accountpage-main-tab-btn-container"><a href="#" target="_self">Update</a></div>
+        </div>
+      </div>
+       <!--tab_container2-->
+      
+      <!--tab_container3-->
+      <div id="tab_container3" class="accountpage-main-tab-container" style="display:none">
+        <div class="accountpage-main-tab-list-container">
+          <ul>
+          <li>
+              <div class="accountpage-main-tab-list-container-no" style="background-color:#1B5180; color:#ffffff"><strong>000</strong></div>
+              <div class="accountpage-main-tab-list-container-name" style="background-color:#1B5180; color:#ffffff"><strong>Dummy Text</strong></div>
+              <div class="accountpage-main-tab-list-container-date"style="background-color:#1B5180; color:#ffffff"><strong>Edit</strong></div>
+              <div class="accountpage-main-tab-list-container-time" style="background-color:#1B5180; color:#ffffff"><strong>Time</strong></div>
+            </li>
+            <li>
+              <div class="accountpage-main-tab-list-container-no">000</div>
+              <div class="accountpage-main-tab-list-container-name">Dummy Text</div>
+              <div class="accountpage-main-tab-list-container-date">Edit</div>
+              <div class="accountpage-main-tab-list-container-time">00:00:00</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+       <!--tab_container3-->
+      <div id="tab_container4" class="accountpage-main-tab-container" style="display:none"></div>
+      <div id="tab_container5" class="accountpage-main-tab-container" style="display:none"></div>
+      <div id="tab_container6" class="accountpage-main-tab-container" style="display:none"></div>
+      <div id="tab_container7" class="accountpage-main-tab-container" style="display:none"></div>
+      <div id="tab_container8" class="accountpage-main-tab-container" style="display:none"></div>
+      <div id="tab_container9" class="accountpage-main-tab-container" style="display:none"></div>
+    </div>
+  </div>
+  <div id="body-right-container">Right Container</div>
+</div>
+<!-- Body-Container Ends --> 
+
+<!--Footer Container-->
+<div id="footer-main-container">
+  <div id="footer-links-container">
+    <ul class="nav1">
+      <li class="current" style="margin-left:-10px"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Registration</a></li>
+      <li><a href="#">Conference</a></li>
+      <li><a href="#">Exhibits/sponsorship</a></li>
+      <li><a href="#">Events/networking</a></li>
+      <li><a href="#">Awards</a></li>
+      <li><a href="#">International</a></li>
+      <li><a href="#">Press</a></li>
+      <li><a href="#">Hotel</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </div>
+  <div id="copyright-container"> © 2012 Direct Marketing Association-India | <a class="fancybox thickbox" href="#inline1">Privacy Policy</a> | <a class="fancybox thickbox" href="#inline2">Terms of Use</a> | <a href="#">Disclaimer</a></div>
+  <div id="digit9-container"><a href="http://www.digit9.co.in"><img src="images/Digit9_logo.jpg" width="60" height="28" alt="digit9" /></a></div>
+</div>
+<div id="inline1" style="display: none;">
+  <div id="privacy-poloicy-container"> <span id="privacy-policy">Privacy Policy</span> <span id="privacy-policy-subtitle">Consumer Privacy</span>
+    <p>At DMAi, we value the customer's privacy. We understand that the failure to respond effectively to privacy issues and risks can result in adverse consequences that range from outright market rejection to regulatory enforcement action, to loss of data flow, or to costly litigation. DMAi in furtherance of its mission to advocate consumer privacy has taken a proactive stance in establishing the DMAi Privacy Guidelines. These standards will serve as guidelines by which DMAi member organizations can establish individual privacy policies while ensuring the privacy of users is uniformly protected.</p>
+    <p>In addition to establishing guidelines, the DMAi follows a strict policy for any information submitted on the DMAi website, addressed below.</p>
+    <p><strong>A. Information Collection and Usage</strong> The DMAi only collects personal information from site visitors on a voluntary basis. This information may include:</p>
+    <ul style="width:500px;font-family:Arial, Helvetica, sans-serif;font-size:12px;margin:0;list-style-type:disc;float:left;color:#878787;">
+      <li>first and last name</li>
+      <li>title</li>
+      <li>company name</li>
+      <li>company address</li>
+      <li>phone and/or fax number</li>
+      <li>e-mail address</li>
+    </ul>
+    <p>credit card information (e.g., type, #, expiration)
+      Individuals must affirmatively request to join and remain on our e-mail lists by contacting DMAi staff at info@dmai.co. The DMAi does not compile, buy, sell, rent or trade consumer mailing lists. Other information volunteered by the customer via site registration, for example, may be used for future marketing and educational efforts (e.g., relevant industry events, DMAi co-sponsored events, educational programs, relevant industry information, DMAi specific products) to that individual.</p>
+    <p><strong>B. User Access</strong> The DMAi is committed to providing reasonable and practical access to allow visitors to identify inaccuracies in their personal information. Each user has the right of access to personal data they have submitted through the DMAi Website. Visitors may submit inquires about the accuracy of personally identifiable information they have previously submitted through the DMAi Website; visitors may also request to have information removed. When practical, the DMAi will, upon request, modify or delete personally identifying information.<br />
+      If you would like to add your name, check and/or correct your information, or remove your name from the DMAi mailing list, e-mail us at info@dmai.co or write to us at the address below. </p>
+    <p><strong>C. Third Party Distribution</strong> Personal information provided to the DMAi generally will not be disseminated to third parties. However, event registration information (e.g., first and last name, title, email address, company name and address) may be provided to event sponsors for a one-time use only. If you do not wish to receive communication from a third-party sponsor of a DMAi event or other program, please inform the DMAi by e-mail at info@dmai.co, calling or writing to the DMAi at the address below. Personal information collected by the DMAi is stored in our database for a reasonable time period with which information remains current, and is updated periodically. The DMAi may divulge information as necessary to comply with state and federal laws (e.g., subpoenas, search warrants, etc).</p>
+    <p><strong>D. Use of Cookies and Log Files</strong> The DMAi reserves the right to analyze its Web site logs in an effort to improve the value of its site (e.g., improve the content and support services on the DMAi site, and to update our records). However, the log files are not personally identifiable and DMAi makes no attempt to link site logs with individuals that pass through the DMAi site. Only authorized DMAi staff have access to DMAi site information. The DMAi does not use cookies on its site. The DMAi does not supplement user information with aggregate data.</p>
+    <p><strong>E. Data Security</strong> The security of the information you provide to the DMAi is important to us. Registration forms which capture certain information, including credit card transactions, are secured through 128 bit SSL encryption with a registered Verisign SSL certificate. Information is stored in a secure area and only accessible by authorized DMAi staff. However, the DMAi site includes links to other sites, and when you choose to visit those sites, the DMAi cannot assume responsibility for any other site's content or information handling practices. We encourage you to review each site's privacy policy prior to entering into transactions with the third-party linked sites.</p>
+    <p><strong>F. Third-Party Verification</strong> To maintain compliance with DMAi Privacy Guidelines, the DMAi will undergo a privacy audit conducted by an independent third party on a regular basis. Direct Marketing Association Contacts Address - 3rd Flr., Nav Bhavna, 422 Veer Savarkar Marg, Prabhadevi, Mumbai-400025 (O) +91 22 24373742 (D) +91 22 6526 3750 (E) info@dmai.co direct-marketing-association-india.org
+    
+    <p>
+    
+    <div> </div>
+    <!--Footer Container Ends--> 
+  </div>
+</div>
+<div id="inline2" style="display: none;">
+  <div id="privacy-poloicy-container"> <span id="privacy-policy">Terms of Use</span>
+    <p>While every precaution has been taken in the preparation of this website and its contents, Direct Marketing Association : India (DMAi) assumes no responsibility for errors or omissions.
+    
+    <ul style="width:500px;font-family:Arial, Helvetica, sans-serif;font-size:12px;margin:0;list-style-type:disc;float:left;color:#878787;">
+      <li>All information and features described herein are subject to change without notice.</li>
+      <li>DMAi has exercised due diligence in checking the correctness and authenticity of the information contained in the site, but DMAi or any of its affiliates or associates or employees shall not be in any way responsible for any loss or damage that may arise to any person from any inadvertent error in the information contained in this site.</li>
+      <li>This website may contain links to third-party websites.This website is providing these links only as a convenience, and the inclusion of a link does not imply endorsement of the linked site by DMAi.</li>
+      <li>DMAi is not responsible for the contents of any linked site or any link contained in a linked site.</li>
+      <li>The content provided is for information purposes alone and does not substitute for specific advice</li>
+    </ul>
+    </p>
+  </div>
+</div>
+</body>
+</html>

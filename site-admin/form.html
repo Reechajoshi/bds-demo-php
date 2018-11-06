@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8" />
+        <title>Admantium - Admin Control Panel</title>
+        
+        <!-- CSSs -->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/960.css" />
+        <link rel="stylesheet" href="css/icons.css">
+        <link rel="stylesheet" href="css/tipsy.css">
+        <link rel="stylesheet" href="css/formalize.css">
+        <link rel="stylesheet" href="css/prettyPhoto.css">
+        <link rel="stylesheet" href="css/jquery-ui-1.8.18.custom.css">
+        <link rel="stylesheet" href="css/chosen.css">
+        <link rel="stylesheet" href="css/ui.spinner.css">
+        <link rel="stylesheet" href="css/jquery.jqplot.min.css" />
+        <link rel="stylesheet" href="css/fullcalendar.css" />
+        <link rel="stylesheet" href="css/jquery.miniColors.css" />
+        <link rel="stylesheet" href="css/elrte.min.css" />
+        <link rel="stylesheet" href="css/elfinder.css" />
+        <link rel="stylesheet" href="css/main.css" />
+
+        <!-- JAVASCRIPTs -->
+        <!--[if lt IE 9]>
+            <script language="javascript" type="text/javascript" src="js/jqPlot/excanvas.min.js"></script>
+            <script language="javascript" type="text/javascript" src="js/html5shiv.js"></script>
+        <![endif]-->
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui-1.8.18.custom.min.js"></script>
+        <script src="js/jquery.tipsy.js"></script>
+        <script src="js/jquery.formalize.min.js"></script>
+        <script src="js/jquery.modal.js"></script>
+        <script src="js/prefixfree.min.js"></script>
+        <script src="js/datables/js/jquery.dataTables.min.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/jquery.autogrowtextarea.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.fileinput.js"></script>
+        <script src="js/chosen.jquery.min.js"></script>
+        <script src="js/ui.checkBox.js"></script>
+        <script src="js/ui.spinner.min.js"></script>
+        <script src="js/jquery.loading.js"></script>
+        <script src="js/jquery.path.js"></script>
+        <script src="js/jqPlot/jquery.jqplot.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.pieRenderer.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.cursor.min.js"></script>
+        <!-- # -->
+        <script src="js/jqPlot/plugins/jqplot.highlighter.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.dragable.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.dateAxisRenderer.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.ohlcRenderer.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.trendline.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.barRenderer.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+        <script src="js/jqPlot/plugins/jqplot.pointLabels.min.js"></script>
+        <!-- /# -->
+        <script src="js/fullcalendar.min.js"></script>
+        <script src="js/jquery.miniColors.min.js"></script>
+        <script src="js/jquery.maskedinput-1.3.min.js"></script>
+        <script src="js/jquery-ui-timepicker-addon.js"></script>
+        <script src="js/elrte.min.js"></script>
+        <script src="js/elfinder.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.metadata.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/demo.js"></script>
+    </head>
+    <body>
+        <!-- wrapper -->
+        <div id="wrapper">
+            <header>
+                <div class="container_12">
+                    <div class="grid_12">
+                        <!-- navigation menu -->
+                        <nav class="main-nav">
+                            <ul>
+                                <li class="active"><a href="dashboard.html" title="Dashboard"><span class="glyph cloud"></span> Dashboard</a></li>
+                                <li>
+                                    <a href="#" title="Elements"><span class="glyph archive"></span> Elements</a>
+                                    <ul class="submenu">
+                                        <li><a href="miscellaneous.html" title="Miscellaneous">Miscellaneous</a></li>
+                                        <li><a href="form.html" title="Form">Form</a></li>
+                                        <li><a href="notifications.html" title="Notifications">Notifications</a></li>
+                                        <li><a href="icons.html" title="Icons">Icons</a></li>
+                                        <li><a href="buttons.html" title="Buttons">Buttons</a></li>
+                                        <li><a href="file-manager.html" title="File Manager">File Manager</a></li>
+                                        <li><a href="calendar.html" title="Calendar">Calendar</a></li>
+                                        <li><a href="960.html" title="960 Grid System">960 Grid System</a></li>
+                                        <li><a href="boxes-and-typography.html" title="Boxes and Typography">Boxes and Typography</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="gallery.html" title="Charts"><span class="glyph movie"></span> Gallery</a></li>
+                                <li>
+                                    <a href="#" title="Tables"><span class="glyph list"></span> Tables</a>
+                                    <ul class="submenu">
+                                        <li><a href="regular-tables.html" title="Regular Tables">Regular Tables</a></li>
+                                        <li><a href="interactive-tables.html" title="Interactive Tables">Interactive Tables</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="charts.html" title="Charts"><span class="glyph rating"></span> Charts</a></li>
+                                <li><a href="login.html" title="Logout"><span class="glyph logout"></span> Logout</a></li>
+                            </ul>
+                        </nav>
+                        <!-- /navigation menu -->
+
+                        <!-- bar -->
+                        <ul class="bar">
+                            <li class="search">
+                                <div>
+                                    <form>
+                                        <!-- the "L" value represents the icon, don't change -->
+                                        <input type="submit" value="L" title="Click to search" class="tooltip glyph" />
+                                        <input type="text" placeholder="What you want to search?" name="s" />
+                                    </form>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyph opened-chat"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyph comment"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="glyph settings"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="edit profile" class="tooltip">
+                                    <span class="glyph user"></span>
+                                    <span class="text">admin</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>                
+                </div>
+            </header>
+
+            <section id="main">
+                <div class="container_12">
+                    <div class="grid_12" id="content-top">
+                        <div id="logo">
+                            <img src="img/logo.png" alt="logo" />
+                        </div>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="error-page.html">
+                                        <span class="glyph close"></span>
+                                        Error Page
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#myModal" class="modal">
+                                        <span class="glyph open-in-new-window"></span>
+                                        Modal
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="glyph zoom-in"></span>
+                                        Quick Post
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="glyph terminal"></span>
+                                        Quick Action
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div id="content">
+                        <div class="extension top inleft breadcrumbs">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">optional</a> <span class="divider"></span></li>
+                                    <li><a href="#">bread</a> <span class="divider"></span></li>
+                                    <li><a href="#">crumbs</a> <span class="divider"></span></li>
+                                    <li><a href="#">here</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    <!-- The modal -->
+                    <div class="box grid_8" id="myModal" hidden>
+                        <header>
+                            <div class="inner">
+                                <div class="left title">
+                                    <h1>Modal</h1>
+                                </div>
+                                <div class="right">
+                                    <a href="#" class="close">close</a>
+                                </div>
+                            </div>
+                        </header>
+                    
+                        <div class="box-content">
+                            <p>Lorem ipsum dolor sit amet, <a href="#">consectetuer</a> adipiscing elit, sed diam nonummy nibh euismod <em>tincidunt</em> ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation <strong>ullamcorper suscipit</strong> lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                            <footer class="pane">
+                                <a href="#" class="close bt red">Close modal</a>
+                                <a href="#" class="bt blue">Custom button</a>
+                            </footer>
+                        </div>
+                    </div>
+
+                        <div class="main-box">
+
+                            <!-- # Form -->
+                            <header class="grid_12 head">
+                                <h1>Form</h1>
+                                <span class="divider"></span>
+                            </header>
+
+                            <div class="box grid_6">
+                                <header>
+                                    <div class="inner">
+                                        <div class="left title">
+                                            <h1>Fields</h1>
+
+                                        </div>
+                                        <div class="right">
+                                            <a href="#" class="close">close</a>
+                                        </div>
+                                    </div>
+                                </header>
+                            
+                                <div class="box-content">
+                                    <div class="field fullwidth">
+                                        <label for="text-input-normal">Text input: </label>
+                                        <input type="text" id="text-input-normal" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="pass-input-normal">Password input: </label>
+                                        <input type="password" id="pass-input-normal" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="text-input-desc">Text input with description: <span>(description)</span></label>
+                                        <input type="text" id="text-input-desc" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="text-input-placeholder">Text input with placeholder: </label>
+                                        <input type="text" id="text-input-placeholder" placeholder="Placeholder here" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="text-input-icon">Text input with icon: <span>(data-icon="user")</span></label>
+                                        <input type="text" id="text-input-icon" data-icon="user" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="text-input-tooltip">Text input with tooltip: </label>
+                                        <input type="text" id="text-input-tooltip" title="Tooltip" class="tooltip" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="text-input-normalm">Text input with maxlength: </label>
+                                        <input maxlength="10" type="text" id="text-input-normalm" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="text-input-disabled">Disabled text input: </label>
+                                        <input type="text" id="text-input-disabled" disabled />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="text-input-readonly">Read-only text input: </label>
+                                        <input type="text" id="text-input-readonly" value="You can't change this" readonly />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="textarea-input-normal">Textarea: </label>
+                                        <textarea id="textarea-input-normal"></textarea>
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="textarea-input-grow">Autogrowing textarea: </label>
+                                        <textarea id="textarea-input-grow" class="autogrow"></textarea>
+                                    </div>
+
+                                    <div class="field">
+                                        <label>File: </label>
+                                        <input type="file" />
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="select">Select: </label>
+                                        <select id="select">
+                                            <option class="selected">Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="field fullwidth">
+                                        <label for="select-multiple">Select: </label>
+                                        <select id="select-multiple" multiple>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                            <option>Option 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid_6">
+                                <div class="box">
+                                    <header>
+                                        <div class="inner">
+                                            <div class="left title">
+                                                <h1>Custom fields</h1>
+                                            </div>
+                                            <div class="right">
+                                                <a href="#" class="close">close</a>
+                                            </div>
+                                        </div>
+                                    </header>
+                                
+                                    <div class="box-content">
+                                        <div class="field">
+                                            <label>Custom file input: </label>
+                                            <input type="file" class="custom-file-input" />
+                                        </div>
+
+                                        <div class="field small">
+                                            <label for="datepicker">Datepicker: </label>
+                                            <input type="text" class="datepicker" id="datepicker" data-icon="clock" />
+                                        </div>
+
+                                        <div class="field small">
+                                            <label for="datetimepicker">Datetimepicker: </label>
+                                            <input type="text" class="datetimepicker" id="datetimepicker" data-icon="clock" />
+                                        </div>
+
+                                        <div class="field small">
+                                            <label>Inline datepicker: </label>
+                                            <div class="datepicker"></div>
+                                        </div>
+
+                                        <div class="field small">
+                                            <label>Colorpicker: </label>
+                                            <input type="text" class="colorpicker" />
+                                        </div>
+
+                                        <div class="field small">
+                                            <label>Hidden input colorpicker: </label>
+                                            <input type="hidden" class="colorpicker" />
+                                        </div>
+
+                                        <div class="field">
+                                            <label for="number">Number: </label>
+                                            <input type="text" id="number" class="number" value="0" />
+                                        </div>
+                                        <div class="field">
+                                            <label for="currency">Currency: </label>
+                                            <input type="text" id="currency" class="number currency" value="0" />
+                                        </div>
+
+                                        <div class="field fullwidth">
+                                            <label>Select with search: </label>
+                                            <select class="chosen">
+                                                <option>Option 1</option>
+                                                <option>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="field fullwidth">
+                                            <label>Select multiple: </label>
+                                            <select class="chosen" multiple>
+                                                <option selected>Option 1</option>
+                                                <option selected>Option 2</option>
+                                                <option>Option 3</option>
+                                                <option>Option 4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="simple-box">
+                                    <div class="inner">
+                                        <div class="columns">
+                                            <div class="left">
+                                                <div class="field list">
+                                                    <label>Checkbox list: </label>
+                                                    <ul>
+                                                        <li><input type="checkbox" id="ck1" /> <label for="ck1">Field 1</label></li>
+                                                        <li><input type="checkbox" id="ck2" /> <label for="ck2">Field 2</label></li>
+                                                        <li><input type="checkbox" id="ck3" checked /> <label for="ck3">Field 3</label></li>
+                                                        <li><input type="checkbox" disabled /> <label>Field 4 (disabled)</label></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="field list">
+                                                    <label>Radio list: </label>
+                                                    <ul>
+                                                        <li><input type="radio" id="rd1" name="rd" /> <label for="rd1">Field 1</label></li>
+                                                        <li><input type="radio" id="rd2" name="rd" /> <label for="rd2">Field 2</label></li>
+                                                        <li><input type="radio" id="rd3" name="rd" checked /> <label for="rd3">Field 3</label></li>
+                                                        <li><input type="radio" disabled /> <label>Field 4 (disabled)</label></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box grid_12">
+                                <header>
+                                    <div class="inner">
+                                        <div class="left title">
+                                            <h1>WYSIWYG</h1>
+                                        </div>
+
+                                        <div class="right">
+                                            <a href="#" class="close">close</a>
+                                        </div>
+                                    </div>
+                                </header>
+                            
+                                <div class="box-content no-inner-space">
+                                        <textarea class="editor"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="box grid_12">
+                                <header>
+                                    <div class="inner">
+                                        <div class="left title">
+                                            <h1>Validation</h1>
+
+                                        </div>
+                                        <div class="right">
+                                            <a href="#" class="close">close</a>
+                                        </div>
+                                    </div>
+                                </header>
+                            
+                                <div class="box-content">
+                                    <form action="http://pelegrinodev.com/admantium/form.php" class="validate">
+                                        <div class="field fullwidth">
+                                            <label for="text-input-required">Required: </label>
+                                            <input type="text" class="required" id="text-input-required" />
+                                        </div>
+
+                                        <div class="field fullwidth">
+                                            <label for="text-input-email">Email: </label>
+                                            <input type="text" name="a" class="{required: true, email: true}" id="text-input-email" />
+                                        </div>
+
+                                        <div class="field fullwidth">
+                                            <label for="text-input-min">Min: </label>
+                                            <input type="text" name="min" class="number {min: 10}" value="0" id="text-input-min" />
+                                        </div>
+
+                                        <footer class="pane">
+                                            <input type="submit" class="bt blue" value="Validate!" />
+                                        </footer>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="box grid_12">
+                                <header>
+                                    <div class="inner">
+                                        <div class="left title">
+                                            <h1>Field sizes</h1>
+
+                                        </div>
+
+                                        <div class="right">
+                                            <a href="#" class="close">close</a>
+                                        </div>
+                                    </div>
+                                </header>
+                            
+                                <div class="box-content">
+                                    <div class="field fullwidth">
+                                        <label for="text-input-fullwidth">Text input full-width: </label>
+                                        <input type="text" id="text-input-fullwidth" />
+                                    </div>
+
+                                    <div class="field large">
+                                        <label for="text-input-large">Text input large: </label>
+                                        <input type="text" id="text-input-large" />
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="text-input-medium">Text input medium: </label>
+                                        <input type="text" id="text-input-medium" />
+                                    </div>
+
+                                    <div class="field small">
+                                        <label for="text-input-small">Text input small: </label>
+                                        <input type="text" id="text-input-small" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="box grid_12">
+                                <header>
+                                    <div class="inner">
+                                        <div class="left title">
+                                            <h1>Masks</h1>
+
+                                        </div>
+                                        <div class="right">
+                                            <a href="#" class="close">close</a>
+                                        </div>
+                                    </div>
+                                </header>
+                            
+                                <div class="box-content">
+                                    <div class="field fullwidth">
+                                        <label for="text-input-m-date">Date mask: <span>99/99/9999</span></label>
+                                        <input type="text" id="text-input-m-date" class="mask-date" />
+                                    </div>
+                                    <div class="field fullwidth">
+                                        <label for="text-input-m-phone">Phone: <span>(999) 999-9999</span></label>
+                                        <input type="text" id="text-input-m-phone" class="mask-phone" />
+                                    </div>
+                                    <div class="field fullwidth">
+                                        <label for="text-input-m-phoneext">Phone + Ext: <span>(999) 999-9999? x99999</span></label>
+                                        <input type="text" id="text-input-m-phoneext" class="mask-phoneext" />
+                                    </div>
+                                    <div class="field fullwidth">
+                                        <label for="text-input-m-taxid">Tax ID: <span>99-9999999</span></label>
+                                        <input type="text" id="text-input-m-taxid" class="mask-tin" />
+                                    </div>
+                                    <div class="field fullwidth">
+                                        <label for="text-input-m-ssn">SSN: <span>999-99-9999</span></label>
+                                        <input type="text" id="text-input-m-ssn" class="mask-ssn" />
+                                    </div>
+                                    <div class="field fullwidth">
+                                        <label for="text-input-pk">Product key: <span>a*-999-a999</span></label>
+                                        <input type="text" id="text-input-pk" class="mask-product" />
+                                    </div>
+                                    <div class="field fullwidth">
+                                        <label for="text-input-m-eyescript">Eye Script: <span>~9.99 ~9.99 999</span></label>
+                                        <input type="text" id="text-input-m-eyescript" class="mask-eyescript" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- /wrapper -->
+
+        <footer>
+            <div class="container_12">
+                <p>&copy; Copyright 2012 - Your Company | Lead Developer - <a href="#" target="_blank">Your name</a></p>
+            </div>
+        </footer>
+    </body>
+</html>
